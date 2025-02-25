@@ -1,3 +1,4 @@
+% EJERCICIO ARBOL GENEALOGICO FAMILIA SIMPSONS.
 mujer(mona).
 mujer(jacqueline).
 mujer(marge).
@@ -46,3 +47,32 @@ prima(X,Y) :- (padre(Z,X); madre(Z,X)),(tia(Z,Y)),mujer(X).
 
 nieto(X,Y) :- (padre(Y,Z);madre(Y,Z)),(padre(Z,X);madre(Z,X)),hombre(X).
 nieta(X,Y) :- (padre(Y,Z);madre(Y,Z)),(padre(Z,X);madre(Z,X)),mujer(X).
+
+?-nieta(X,mona).
+X= lisa
+X= maggie
+
+?-abuela_paterna(X,lisa).
+X= mona
+
+?-hermana(X,bart).
+X= lisa
+X= maggie
+
+?-nieto(X,clancy).
+X= bart
+
+?-nieta(X,jacqueline).
+X=ling
+X=lisa
+X=maggie
+
+?-tia(X,maggie).
+X=patty
+X=selma
+
+?-primo(X,ling).
+X=bart
+
+?-abuelo_paterno(X,maggie).
+X=abraham
